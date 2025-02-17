@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aayoj's Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://source.unsplash.com/random/1920x1080?technology') no-repeat center center fixed;
+            background-size: cover;
+            transition: background 1s ease-in-out;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 123, 255, 0.8);
+            color: white;
+            transition: transform 0.5s ease;
+        }
+        header:hover {
+            transform: scale(1.05);
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: yellow;
+        }
+        section {
+            padding: 50px;
+            text-align: center;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            transition: all 0.3s ease-in-out;
+            background: rgba(255, 255, 255, 0.9);
+            position: relative;
+            overflow: hidden;
+        }
+        section:hover {
+            transform: translateY(-5px);
+        }
+        section:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.5);
+            opacity: 0;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.5s ease;
+        }
+        section.clicked:before {
+            width: 200px;
+            height: 200px;
+            opacity: 0.5;
+        }
+        #about {
+            background: rgba(255, 204, 203, 0.9);
+        }
+        #skills {
+            background: rgba(173, 216, 230, 0.9);
+        }
+        #projects {
+            background: rgba(144, 238, 144, 0.9);
+        }
+        #contact {
+            background: rgba(244, 208, 63, 0.9);
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(52, 58, 64, 0.9);
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Aayoj</h1>
+        <p>Computer Science Student | Graphic Designer | Excel Enthusiast</p>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hi, I'm Aayoj, a Computer Science student with a passion for programming, graphic design, and Excel. I love creating visually appealing designs and solving problems with code.</p>
+    </section>
+    
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>Web Development (HTML, CSS, JavaScript)</li>
+            <li>Graphic Design (Figma,Canva)</li>
+            <li>Microsoft Excel (Data Analysis, Automation)</li>
+            <li>Programming ( C++,)</li>
+        </ul>
+    </section>
+    
+    <section id="projects">
+        <h2>Projects</h2>
+        <p>Here are some of my projects:</p>
+        <ul>
+            <li>Portfolio Website - A personal website showcasing my work.</li>
+            <li>Graphic Design Portfolio - A collection of my design work.</li>
+            <li>Excel Automation -</li>
+        </ul>
+    </section>
+    
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: aayojbimali52@gmail.com</p>
+        <p>LinkedIn: <a href="#">linkedin.com/in/aayoj</a></p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Aayoj. All Rights Reserved.</p>
+    </footer>
+    
+    <script>
+        document.querySelectorAll('section').forEach(section => {
+            section.addEventListener('click', function() {
+                this.classList.add('clicked');
+                this.style.boxShadow = '0px 0px 30px 5px rgba(255, 255, 0, 0.8)';
+                setTimeout(() => {
+                    this.classList.remove('clicked');
+                    this.style.boxShadow = '0px 4px 6px rgba(0, 0, 0, 0.1)';
+                }, 500);
+            });
+        });
+    </script>
+</body>
+</html>
